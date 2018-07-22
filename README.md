@@ -1,6 +1,6 @@
 # functional
 
-> Functional JavaScript Idiomatic
+> Functional JavaScript
 
 ### combine(arrays)
 
