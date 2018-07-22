@@ -10,7 +10,7 @@ In a browser e.g.
 <script type="module">
 import { head } from './array.mjs'
 
-console.log(fnArray.head(['foo', 'bar']))
+console.log(head(['foo', 'bar']))
 </script>
 ```
 
@@ -26,7 +26,7 @@ $ touch index.mjs
 // index.mjs
 import { head } from './node_modules/functional/array'
 
-console.log(fnArray.head(['foo', 'bar']))
+console.log(head(['foo', 'bar']))
 
 $ node --experimental-modules index.mjs
 > foo
@@ -64,13 +64,7 @@ Similar to without, but returns the values from array that are not present in th
 difference([1, 2, 3, 4, 5], [5, 2, 10]) // => [1, 3, 4]
 ```
 
-### head(array)
-
-Returns the first element of an array.
-
-```javascript
-head(['foo', 'bar']) // => 'foo'
-```
+~~head(array)~~ comments are in ```array.mjs```
 
 ### initial(array)
 
