@@ -9,6 +9,7 @@ import {
   last,
   sortedIndex,
   tail,
+  toArray,
   union,
   unique,
   without,
@@ -66,6 +67,11 @@ test('sortedIndex', t =>
 test('tail', t =>
   t.deepEqual(tail(['foo', 'bar', 'baz']), ['bar', 'baz'])
 )
+
+test('toArray', t => {
+  const args = []
+  t.deepEqual(Array.isArray((() => toArray(args))('foo', 'bar')), true)
+})
 
 test('union', t =>
   t.deepEqual(union([1, 2, 3], [101, 2, 1, 10], [2, 1]), [1, 2, 3, 101, 10])
