@@ -1,49 +1,49 @@
 // Array utils /////////////////////////////////////////////////////////////////
 
-export const combine = (...arrays) => [].concat(...arrays)
+const combine = (...arrays) => [].concat(...arrays)
 
-export const compact = arr => arr.filter(Boolean)
+const compact = arr => arr.filter(Boolean)
 
-export const contains = (() => Array.prototype.includes
+const contains = (() => Array.prototype.includes
   ? (arr, value) => arr.includes(value)
   : (arr, value) => arr.some(el => el === value)
 )()
 
-export const difference = (arr, ...others) => {
+const difference = (arr, ...others) => {
   var combined = [].concat(...others)
   return arr.filter(el => !combined.some(exclude => el === exclude))
 }
 
-export const head = arr => arr[0]
+const head = arr => arr[0]
 
-export const initial = arr => arr.slice(0, -1)
+const initial = arr => arr.slice(0, -1)
 
-export const intersection = (...arrays) =>
+const intersection = (...arrays) =>
   [...new Set([].concat(...arrays))].filter(toFind =>
     arrays.every(arr => arr.some(el => el === toFind))
   )
 
-export const last = arr => arr.slice(-1)[0]
+const last = arr => arr.slice(-1)[0]
 
-export const sortedIndex = (arr, value) =>
+const sortedIndex = (arr, value) =>
   [value].concat(arr).sort().indexOf(value)
 
-export const tail = arr => arr.slice(1)
+const tail = arr => arr.slice(1)
 
-export const toArray = (() => Array.from ? Array.from : obj => [].slice.call(obj))()
+const toArray = (() => Array.from ? Array.from : obj => [].slice.call(obj))()
 
-export const union = (...arrays) => [...new Set([].concat(...arrays))]
+const union = (...arrays) => [...new Set([].concat(...arrays))]
 
-export const unique = arr => [...new Set(arr)]
+const unique = arr => [...new Set(arr)]
 
-export const without = (arr, ...values) =>
+const without = (arr, ...values) =>
   arr.filter(el => !values.some(exclude => el === exclude))
 
 // Object utils ////////////////////////////////////////////////////////////////
 
-export const getValues = obj => Object.keys(obj).map(key => obj[key])
+const getValues = obj => Object.keys(obj).map(key => obj[key])
 
-export const merge = (() => {
+const merge = (() => {
   const extend = Object.assign ? Object.assign : (target, ...sources) => {
     sources.forEach(source =>
       Object.keys(source).forEach(prop => target[prop] = source[prop]) // eslint-disable-line no-return-assign
@@ -53,32 +53,32 @@ export const merge = (() => {
   return (...objects) => extend({}, ...objects)
 })()
 
-export const toMap = (() => {
+const toMap = (() => {
   const convert = obj => new Map(Object.keys(obj).map(key => [key, obj[key]]))
   return obj => obj instanceof Map ? obj : convert(obj)
 })()
 
 // Math ////////////////////////////////////////////////////////////////////////
 
-export const min = arr => Math.min(...arr)
+const min = arr => Math.min(...arr)
 
-export const max = arr => Math.max(...arr)
+const max = arr => Math.max(...arr)
 
-export const sum = arr => arr.reduce((a, b) => a + b)
+const sum = arr => arr.reduce((a, b) => a + b)
 
-export const product = arr => arr.reduce((a, b) => a * b)
+const product = arr => arr.reduce((a, b) => a * b)
 
 // Function decorators /////////////////////////////////////////////////////////
 
-export const not = fn => (...args) => !fn(...args)
+const not = fn => (...args) => !fn(...args)
 
-export const maybe = fn =>
+const maybe = fn =>
   (...args) => {
     if (args.length < fn.length || args.some(arg => arg == null)) return
     return fn(...args)
   }
 
-export const once = fn => {
+const once = fn => {
   let done = false
   return (...args) => {
     if (done) return
@@ -87,12 +87,41 @@ export const once = fn => {
   }
 }
 
-export const curry = fn => {
+const curry = fn => {
   const arity = fn.length
   const curried = (...args) =>
     args.length < arity ? (...more) => curried(...args, ...more) : fn(...args)
   return curried
 }
 
-export const pipeline = (...funcs) =>
+const pipeline = (...funcs) =>
   value => funcs.reduce((a, b) => b(a), value)
+
+export {
+  combine,
+  compact,
+  contains,
+  difference,
+  head,
+  initial,
+  intersection,
+  last,
+  sortedIndex,
+  tail,
+  toArray,
+  union,
+  unique,
+  without,
+  getValues,
+  merge,
+  product,
+  toMap,
+  min,
+  max,
+  sum,
+  not,
+  maybe,
+  once,
+  curry,
+  pipeline
+}
