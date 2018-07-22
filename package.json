@@ -1,0 +1,20 @@
+{
+  "name": "functional",
+  "version": "1.0.0",
+  "description": "Functional JavaScript Idiomatic",
+  "scripts": {
+    "test": "ava -v"
+  },
+  "devDependencies": {
+    "ava": "^1.0.0-beta.6"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "babel": false,
+    "extensions": [
+      "mjs"
+    ]
+  }
+}
