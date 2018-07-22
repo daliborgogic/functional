@@ -8,7 +8,7 @@ In a browser e.g.
 
 ```html
 <script type="module">
-import * as fnArray from './array.mjs'
+import { head } from './array.mjs'
 
 console.log(fnArray.head(['foo', 'bar']))
 </script>
@@ -19,18 +19,16 @@ In Node.js:
 The ```--experimental-modules``` flag can be used to enable features for loading ESM modules.
 
 ```javascript
-node --experimental-modules .
-
 $ npm init -y
 $ npm i daliborgogic/functional
 $ touch index.mjs
 
 // index.mjs
-import * as fnArray from './node_modules/functional/array'
+import { head } from './node_modules/functional/array'
 
 console.log(fnArray.head(['foo', 'bar']))
 
-$ npm start
+$ node --experimental-modules index.mjs
 > foo
 ```
 
