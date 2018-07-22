@@ -32,13 +32,9 @@ $ node --experimental-modules index.mjs
 > foo
 ```
 
-### combine(arrays)
-
 Combine multiple arrays into one array.
 
-```javascript
-combine(['foo'], ['bar', 'baz'], [1, 2]) // => ['foo', 'bar', 'baz', 1, 2]
-```
+[combine(array)](https://github.com/daliborgogic/functional/blob/master/array.mjs#L1)
 
 ### compact(array)
 

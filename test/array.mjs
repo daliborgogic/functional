@@ -16,7 +16,12 @@ import {
 } from './../array'
 
 test('combine', t => {
-  const fn = combine(['foo'], ['bar', 'baz'], [1, 2])
+  const a = ['foo']
+  const b = ['bar', 'baz']
+  const c = [1, 2]
+
+  const fn = combine(a, b, c)
+
   const expected = ['foo', 'bar', 'baz', 1, 2]
   t.deepEqual(fn, expected)
 })

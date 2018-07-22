@@ -1,3 +1,20 @@
+/**
+ * Combine multiple arrays into one array.
+ *
+ * @category Array
+ * @param {...Arrary}
+ * @returns {Array} Returns `Array`.
+ * @example
+ *
+ * const a = ['foo']
+ *
+ * const b = ['bar', 'baz']
+ *
+ * const c = [1, 2]
+ *
+ * combine(a, b, c)
+ * // => ['foo', 'bar', 'baz', 1, 2]
+ */
 const combine = (...arrays) => [].concat(...arrays)
 
 const compact = arr => arr.filter(Boolean)
