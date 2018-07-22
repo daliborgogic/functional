@@ -25,10 +25,4 @@ const curry = fn => {
 const pipeline = (...funcs) =>
   value => funcs.reduce((a, b) => b(a), value)
 
-export {
-  not,
-  maybe,
-  once,
-  curry,
-  pipeline
-}
+export { not, maybe, once, curry, pipeline }

@@ -6,9 +6,4 @@ const sum = arr => arr.reduce((a, b) => a + b)
 
 const product = arr => arr.reduce((a, b) => a * b)
 
-export {
-  min,
-  max,
-  sum,
-  product
-}
+export { min,max,sum,product }

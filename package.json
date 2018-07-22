@@ -30,5 +30,23 @@
       "eslint:recommended",
       "standard"
     ]
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "eslint-config-idiomatic": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daliborgogic/functional.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daliborgogic/functional/issues"
+  },
+  "homepage": "https://github.com/daliborgogic/functional#readme"
 }

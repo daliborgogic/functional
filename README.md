@@ -2,6 +2,33 @@
 
 > Functional JavaScript
 
+### Installation
+
+In a browser e.g.
+
+```html
+<script type="module" src="array.js"></script>
+```
+
+In Node.js:
+
+The ```--experimental-modules``` flag can be used to enable features for loading ESM modules.
+
+```javascript
+node --experimental-modules index.mjs
+```
+
+Then import:
+
+```javascript
+$ npm i daliborgogic/functional
+
+// index.mjs
+import * as a from './node_modules/functional/array'
+
+console.log(a.head(['foo', 'bar'])) // => foo
+```
+
 ### combine(arrays)
 
 Combine multiple arrays into one array.

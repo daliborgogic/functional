@@ -31,9 +31,10 @@ test('difference', t =>
   t.deepEqual(difference([1, 2, 3, 4, 5], [5, 2, 10]), [1, 3, 4])
 )
 
-test('head', t =>
+test('head', t => {
   t.deepEqual(head(['foo', 'bar']), 'foo')
-)
+  t.deepEqual(head([]), undefined)
+})
 
 test('initial', t =>
   t.deepEqual(initial([3, 2, 1]), [3, 2])

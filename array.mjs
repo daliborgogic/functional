@@ -12,6 +12,23 @@ const difference = (arr, ...others) => {
   return arr.filter(el => !combined.some(exclude => el === exclude))
 }
 
+/**
+ * Gets the first element of `array`.
+ *
+ * @since 0.1.0
+ * @alias first
+ * @category Array
+ * @param {Array} array The array to query.
+ * @returns {*} Returns the first element of `array`.
+ * @see last
+ * @example
+ *
+ * head(['foo', 'bar'])
+ * // => 'foo'
+ *
+ * head([])
+ * // => undefined
+ */
 const head = arr => arr[0]
 
 const initial = arr => arr.slice(0, -1)
