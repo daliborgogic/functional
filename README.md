@@ -8,9 +8,9 @@ In a browser e.g.
 
 ```html
 <script type="module">
-import * as a from './array.mjs'
+import * as fnArray from './array.mjs'
 
-console.log(a.head(['foo', 'bar']))
+console.log(fnArray.head(['foo', 'bar']))
 </script>
 ```
 
@@ -26,9 +26,9 @@ $ npm i daliborgogic/functional
 $ touch index.mjs
 
 // index.mjs
-import * as a from './node_modules/functional/array'
+import * as fnArray from './node_modules/functional/array'
 
-console.log(a.head(['foo', 'bar']))
+console.log(fnArray.head(['foo', 'bar']))
 
 $ npm start
 > foo
