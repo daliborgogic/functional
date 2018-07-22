@@ -64,7 +64,7 @@ Similar to without, but returns the values from array that are not present in th
 difference([1, 2, 3, 4, 5], [5, 2, 10]) // => [1, 3, 4]
 ```
 
-~~head(array)~~ comments are in ```array.mjs```
+[head(array)](https://github.com/daliborgogic/functional/blob/master/array.mjs#L29) commented
 
 ### initial(array)
 
