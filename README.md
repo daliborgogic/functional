@@ -15,18 +15,23 @@ In Node.js:
 The ```--experimental-modules``` flag can be used to enable features for loading ESM modules.
 
 ```javascript
-node --experimental-modules index.mjs
-```
+node --experimental-modules .
 
-Then import:
-
-```javascript
+$ npm init -y
 $ npm i daliborgogic/functional
+$ touch index.mjs
 
 // index.mjs
 import * as a from './node_modules/functional/array'
 
-console.log(a.head(['foo', 'bar'])) // => foo
+console.log(a.head(['foo', 'bar']))
+
+$ npm start
+> [project_name]@1.0.0 start [project_path]
+> node --experimental-modules .
+
+(node:27055) ExperimentalWarning: The ESM module loader is experimental.
+foo
 ```
 
 ### combine(arrays)
