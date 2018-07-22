@@ -32,6 +32,8 @@ $ node --experimental-modules index.mjs
 > foo
 ```
 
+### Array
+
 Combine multiple arrays into one array.
 
 [combine(array)](https://github.com/daliborgogic/functional/blob/master/array.mjs#L1)

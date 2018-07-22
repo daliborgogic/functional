@@ -7,9 +7,7 @@
  * @example
  *
  * const a = ['foo']
- *
  * const b = ['bar', 'baz']
- *
  * const c = [1, 2]
  *
  * combine(a, b, c)
