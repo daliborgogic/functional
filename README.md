@@ -7,7 +7,11 @@
 In a browser e.g.
 
 ```html
-<script type="module" src="array.js"></script>
+<script type="module">
+import * as a from './array.mjs'
+
+console.log(a.head(['foo', 'bar']))
+</script>
 ```
 
 In Node.js:
@@ -27,11 +31,7 @@ import * as a from './node_modules/functional/array'
 console.log(a.head(['foo', 'bar']))
 
 $ npm start
-> [project_name]@1.0.0 start [project_path]
-> node --experimental-modules .
-
-(node:27055) ExperimentalWarning: The ESM module loader is experimental.
-foo
+> foo
 ```
 
 ### combine(arrays)
