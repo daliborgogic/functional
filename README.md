@@ -177,7 +177,7 @@ add(2)(3) // => 5
 ### pipeline(functions)
 Returns the composition of multiple functions from left to right.
 
-```javasscript
+```javascript
 const plus1 = a => a + 1
 const mult2 = a => a * 2
 let addThenMult = pipeline(plus1, mult2)

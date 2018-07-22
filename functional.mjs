@@ -1,5 +1,4 @@
-// array utils
-// =================================================================================================
+// Array utils /////////////////////////////////////////////////////////////////
 
 export const combine = (...arrays) => [].concat(...arrays)
 
@@ -40,16 +39,14 @@ export const unique = arr => [...new Set(arr)]
 export const without = (arr, ...values) =>
   arr.filter(el => !values.some(exclude => el === exclude))
 
-
-// object utils
-// =================================================================================================
+// Object utils ////////////////////////////////////////////////////////////////
 
 export const getValues = obj => Object.keys(obj).map(key => obj[key])
 
 export const merge = (() => {
   const extend = Object.assign ? Object.assign : (target, ...sources) => {
     sources.forEach(source =>
-      Object.keys(source).forEach(prop => target[prop] = source[prop])
+      Object.keys(source).forEach(prop => target[prop] = source[prop]) // eslint-disable-line no-return-assign
     )
     return target
   }
@@ -61,9 +58,7 @@ export const toMap = (() => {
   return obj => obj instanceof Map ? obj : convert(obj)
 })()
 
-
-// math
-// =================================================================================================
+// Math ////////////////////////////////////////////////////////////////////////
 
 export const min = arr => Math.min(...arr)
 
@@ -73,9 +68,7 @@ export const sum = arr => arr.reduce((a, b) => a + b)
 
 export const product = arr => arr.reduce((a, b) => a * b)
 
-
-// function decorators
-// =================================================================================================
+// Function decorators /////////////////////////////////////////////////////////
 
 export const not = fn => (...args) => !fn(...args)
 
@@ -95,7 +88,7 @@ export const once = fn => {
 }
 
 export const curry = fn => {
-  const arity = fn.length;
+  const arity = fn.length
   const curried = (...args) =>
     args.length < arity ? (...more) => curried(...args, ...more) : fn(...args)
   return curried

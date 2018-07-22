@@ -1,12 +1,19 @@
 {
   "name": "functional",
   "version": "1.0.0",
-  "description": "Functional JavaScript Idiomatic",
+  "description": "Functional JavaScript",
   "scripts": {
-    "test": "ava -v"
+    "test": "ava -v",
+    "lint": "eslint --ext .mjs --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "ava": "^1.0.0-beta.6"
+    "ava": "^1.0.0-beta.6",
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
   },
   "ava": {
     "require": [
@@ -15,6 +22,12 @@
     "babel": false,
     "extensions": [
       "mjs"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "standard"
     ]
   }
 }

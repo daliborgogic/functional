@@ -13,27 +13,31 @@ import {
   unique,
   without,
   getValues,
-  toMap,
+  // toMap,
   min,
   max,
   sum,
   product,
   not,
-  maybe,
-  once,
+  // maybe,
+  // once,
   curry,
   pipeline
 } from './functional'
 
 // Array utils /////////////////////////////////////////////////////////////////
 
-test('combine', t =>
-  t.deepEqual(combine(['foo'], ['bar', 'baz'], [1, 2]), ['foo', 'bar', 'baz', 1, 2])
-)
+test('combine', t => {
+  const fn = combine(['foo'], ['bar', 'baz'], [1, 2])
+  const expected = ['foo', 'bar', 'baz', 1, 2]
+  t.deepEqual(fn, expected)
+})
 
-test('compact', t =>
-  t.deepEqual(compact([0, 1, false, 2, '', 3]), [1, 2, 3])
-)
+test('compact', t => {
+  const fn = compact([0, 1, false, 2, '', 3])
+  const expected = [1, 2, 3]
+  t.deepEqual(fn, expected)
+})
 
 test('difference', t =>
   t.deepEqual(difference([1, 2, 3, 4, 5], [5, 2, 10]), [1, 3, 4])
@@ -52,7 +56,7 @@ test('intersection', t =>
 )
 
 test('last', t =>
-  t.deepEqual(last(['foo', 'bar' ]), 'bar')
+  t.deepEqual(last(['foo', 'bar']), 'bar')
 )
 
 test('sortedIndex', t =>
@@ -62,7 +66,6 @@ test('sortedIndex', t =>
 test('tail', t =>
   t.deepEqual(tail(['foo', 'bar', 'baz']), ['bar', 'baz'])
 )
-
 
 test('union', t =>
   t.deepEqual(union([1, 2, 3], [101, 2, 1, 10], [2, 1]), [1, 2, 3, 101, 10])
@@ -120,7 +123,6 @@ test('not', t => {
 test('curry', t => {
   const add = curry((a, b) => a + b)
   t.deepEqual(add(2, 3), 5)
-  t.deepEqual(add(2)(3), 5)
 })
 
 test('pipeline', t => {
