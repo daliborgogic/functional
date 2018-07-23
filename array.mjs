@@ -2,7 +2,7 @@
  * Combine multiple arrays into one array.
  *
  * @category Array
- * @param {...Arrary}
+ * @param {...Array}
  * @returns {Array} Returns `Array`.
  * @example
  *
@@ -28,7 +28,7 @@ const difference = (arr, ...others) => {
 }
 
 /**
- * Gets the first element of `array`.
+ * Get the first element of `array`.
  *
  * @category Array
  * @param {Array} array The array to query.
@@ -50,6 +50,20 @@ const intersection = (...arrays) =>
     arrays.every(arr => arr.some(el => el === toFind))
   )
 
+/**
+ * Get the last element of `array`.
+ *
+ * @category Array
+ * @param {Array} array The array to query.
+ * @returns {*} Returns the last element of `array`.
+ * @example
+ *
+ * head(['foo', 'bar'])
+ * // => 'bar'
+ *
+ * head([])
+ * // => undefined
+ */
 const last = arr => arr.slice(-1)[0]
 
 const sortedIndex = (arr, value) =>

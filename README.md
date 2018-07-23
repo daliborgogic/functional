@@ -10,7 +10,10 @@ In a browser e.g.
 <script type="module">
 import { head } from './array.mjs'
 
-console.log(head(['foo', 'bar']))
+// Get first element
+const first = head(['foo', 'bar'])
+console.log(first)
+// => foo
 </script>
 ```
 
@@ -24,12 +27,14 @@ $ npm i daliborgogic/functional
 $ touch index.mjs
 
 // index.mjs
-import { head } from './node_modules/functional/array'
+import { last } from './node_modules/functional/array'
 
-console.log(head(['foo', 'bar']))
+// Get last element
+const last = head(['foo', 'bar'])
+console.log(last)
 
 $ node --experimental-modules index.mjs
-> foo
+> bar
 ```
 
 ### Array
