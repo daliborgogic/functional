@@ -30,8 +30,8 @@ $ touch index.mjs
 import { last } from './node_modules/functional/array'
 
 // Get last element
-const last = head(['foo', 'bar'])
-console.log(last)
+const rear = last(['foo', 'bar'])
+console.log(rear)
 
 $ node --experimental-modules index.mjs
 > bar
