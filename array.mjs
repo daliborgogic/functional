@@ -58,10 +58,10 @@ const intersection = (...arrays) =>
  * @returns {*} Returns the last element of `array`.
  * @example
  *
- * head(['foo', 'bar'])
+ * last(['foo', 'bar'])
  * // => 'bar'
  *
- * head([])
+ * last([])
  * // => undefined
  */
 const last = arr => arr.slice(-1)[0]
